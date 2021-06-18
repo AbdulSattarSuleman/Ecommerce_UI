@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mini_project_1/products.dart';
 
 import 'main.dart';
 
@@ -65,24 +66,30 @@ class _CategoriesState extends State<Categories> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Container(
-              child: Center(
-                  child: Text(
-                "Gyro And Kebab",
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 22,
-                  fontWeight: FontWeight.w800,
-                ),
-              )),
-              width: MediaQuery.of(context).size.width,
-              height: 160,
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage("assets/chapli.jpg"),
-                  fit: BoxFit.fitWidth,
-                  colorFilter: ColorFilter.mode(
-                      Colors.black26.withOpacity(0.3), BlendMode.darken),
+            InkWell(
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => Products()));
+              },
+              child: Container(
+                child: Center(
+                    child: Text(
+                  "Gyro And Kebab",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 22,
+                    fontWeight: FontWeight.w800,
+                  ),
+                )),
+                width: MediaQuery.of(context).size.width,
+                height: 160,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage("assets/chapli.jpg"),
+                    fit: BoxFit.fitWidth,
+                    colorFilter: ColorFilter.mode(
+                        Colors.black26.withOpacity(0.3), BlendMode.darken),
+                  ),
                 ),
               ),
             ),
